@@ -1,0 +1,14 @@
+[輸出格式建議（給 VLM，以下為參考格式，內容請自行判斷，evidence和action分別整合成一句就可以）]
+請輸出 JSON：
+{
+  "type": "安全" or "{異常類型}" or "{異常類型1} + {異常類型2}"(if there are multiple types of risk),
+  "evidence": ["具體事證描述"],
+  "risk_level": 0/5,1/5,2/5,3/5,4/5,5/5 (should be "risk_level/5"),
+  "actions": ["建議處理步驟"],
+  "references": ["{參考SOP文件來源}(e.g. "SOP-01 C2","SOP-01 C3","SOP-01 A1")"],
+  "confidence": 0%-100% (percentage mark is necessary)
+  "rag_summary": ["基於SOP文件(C1-C6)對當前畫面的總結與判斷依據(一句話總結)"]
+}
+
+[關鍵字（檢索輔助）]
+走道、通道、暢通、障礙物、盒子、寶特瓶、不明液體、洩漏
